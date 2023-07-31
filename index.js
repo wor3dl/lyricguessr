@@ -1,6 +1,6 @@
 const inputField = document.getElementById("input-container")
-const inputInput = document.getElementById("lyric-input")
+const lyricInput = document.getElementById("lyric-input")
 
-inputField.onclick = function() {
-
+lyricInput.oninput = function() {
+    console.log(lyricInput.value)
 }
