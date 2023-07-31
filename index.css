@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(32, 32, 32);
+}
+
+h1 {
+    font-family: "Foldit", serif;
+    font-size: 5dvh;
+}
+
+#header-container {
+    height: 15dvh;
+    border-width: 1dvmin;
+    border-color: grey;
+    border-bottom-style: double;
+    border-top-style: double;
+    border-left-style: double;
+    border-right-style: double;
+}
+
+#lyric-container {
+    height: 70dvh;
+    width: 100dvw;
+    border-width: 1dvmin;
+    border-color: grey;
+    border-style: double;
+}
+
+#input-container {
+    height: 15dvh;
+    border-width: 1dvmin;
+    border-color: grey;
+    border-top-style: double;
+    border-left-style: double;
+    border-right-style: double;
+    border-bottom-style: double;
+}
+
+#lyric-input {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 7dvh;
+}
