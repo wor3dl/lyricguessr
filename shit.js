@@ -19,9 +19,11 @@ const hash = function(str, seed = 0) {
     }
   }
 
-const offsetFromDate = new Date(2022, 0, 1)
-const msOffset = Date.now() - offsetFromDate
+const offsetFromDate = new Date("31 Jul 2023")
+const msOffset = new Date("1 August 2023") - offsetFromDate // should be this --> const msOffset = Date.now() - offsetFromDate
 const dayOffset = Math.floor(msOffset / 1000 / 60 / 60 / 24)
+
+var targetSong //Object containing information on current song
 
 async function retrieveSong(name) {
     var song = await fetch(`songs/${name}.song`)
@@ -29,4 +31,6 @@ async function retrieveSong(name) {
     return data
 }
 
-retrieveSong("Poker Face by Lady Gaga")
+retrieveSong(songList[dayOffset]).then(data => {
+    targetSong = data
+})
