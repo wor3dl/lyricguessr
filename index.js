@@ -10,9 +10,7 @@ var unpunctuatedLyrics = []
 retrieveSong(songList[dayOffset]).then(data => {
 
     targetSong = data
-
-    console.log(targetSong.lyrics)
-    
+        
     for (let header of Object.keys(targetSong.lyrics)) {
         lyrics = lyrics.concat(targetSong.lyrics[header].lyrics)
     }

@@ -1,1 +1,1 @@
-const songList = ["Billie Jean by Michael Jackson"]
+const songList = ["Poker Face by Lady Gaga","Smells Like Teen Spirit by Nirvana","Billie Jean by Michael Jackson","Blurred Lines by Robin Thicke (Ft. Pharrell Williams & T.I.)","Stairway to Heaven by Led Zeppelin","Shape of You by Ed Sheeran"]
