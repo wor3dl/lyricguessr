@@ -18,7 +18,7 @@ retrieveSong(songList[dayOffset]).then(data => {
 
     lyrics.forEach(function(lyric) {
         createLyric(lyric)
-        unpunctuatedLyrics.push(lyric.replaceAll(/[^A-Za-z]/g, ""))
+        unpunctuatedLyrics.push(lyric.replaceAll(/[^A-Za-z]/g, "").toLowerCase())
     })
 
 })
