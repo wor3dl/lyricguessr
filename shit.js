@@ -19,8 +19,8 @@ const hash = function(str, seed = 0) {
     }
   }
 
-const offsetFromDate = new Date("31 Jul 2023")
-const msOffset = new Date("1 August 2023") - offsetFromDate // should be this --> const msOffset = Date.now() - offsetFromDate
+const offsetFromDate = new Date("3 August 2023")
+const msOffset = Date.now() - offsetFromDate
 const dayOffset = Math.floor(msOffset / 1000 / 60 / 60 / 24)
 
 var targetSong //Object containing information on current song
@@ -35,90 +35,6 @@ async function retrieveSong(name) {
 
 retrieveSong(songList[dayOffset]).then(data => {
     targetSong = data
-    formattedLyrics = formatLyrics(targetSong.lyrics)
-    console.log(formattedLyrics)
+    console.log(targetSong.lyrics)
 })
 
-var removableStrings = []
-var specialStrings = ["...", ".", "#", ",", "!", "?", `"`]
-
-function formatLyrics(lyrics) {
-    let block = lyrics
-    block = block.replaceAll("\n", " ")
-
-    //Split Headers from Lyrics
-
-    headerSplit = []
-
-    while(true) {
-
-        let start = block.indexOf("[", 0)
-        
-        if (start == -1) {
-            headerSplit.push({type:"lyric", text:block})
-            break
-        }
-        
-        let end = block.indexOf("]", start)
-        let header = block.substring(start, end+1)
-        let part1 = block.substring(0, start)
-        let part2 = block.substring(end+1, block.length)
-        headerSplit.push({type:"lyric", text:part1})
-        headerSplit.push({type:"header", text:header})
-        block = part2
-    }
-
-    var parentedLyrics = []
-
-    for (let b = 0; b < headerSplit.length; b++) {
-
-        let block = headerSplit[b]
-
-        if (block.type == "header") {
-
-            let header = {header:block.text, lyrics:[]}
-
-            if (!(b == headerSplit.length-1)) {
-
-                if (headerSplit[b+1].type == "lyric") {
-
-                    let lyrics = headerSplit[b+1].text
-
-                    for (word of lyrics.split(" ")) {
-
-                        if (/\S/.test(word)) {
-                            
-                            let done = false
-
-                            for (remove of removableStrings) {
-                                word = word.replace(remove, "")
-                            }
-
-                            for (special of specialStrings) {
-
-                                if (word.includes(special)) {
-                                    let indexSpecial = word.indexOf(special)
-                                    let stripped = word.replace(special, "")
-                                    done = true
-                                    if (indexSpecial <= 0) {
-                                        header.lyrics.push(special)
-                                        header.lyrics.push(stripped)
-                                    } else {
-                                        header.lyrics.push(stripped)
-                                        header.lyrics.push(special)
-                                    }
-                                    break
-                                }
-                            }
-                            if (!done) header.lyrics.push(word)
-                        }
-                    }
-                }
-            }
-            parentedLyrics.push(header)
-        }
-    }
-
-    return parentedLyrics
-
-}
