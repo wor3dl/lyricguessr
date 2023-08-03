@@ -33,8 +33,3 @@ async function retrieveSong(name) {
     return data
 }
 
-retrieveSong(songList[dayOffset]).then(data => {
-    targetSong = data
-    console.log(targetSong.lyrics)
-})
-
