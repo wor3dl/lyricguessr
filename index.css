@@ -72,4 +72,5 @@ lyric {
     color: white;
     font-size: 7dvh;
     text-align: center;
+    transition: .075s linear;
 }
