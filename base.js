@@ -20,7 +20,7 @@ const hash = function(str, seed = 0) {
   }
 
 const offsetFromDate = new Date("3 August 2023")
-const msOffset = Date.now() - offsetFromDate
+const msOffset = new Date("3 August 2023") - offsetFromDate
 const dayOffset = Math.floor(msOffset / 1000 / 60 / 60 / 24)
 
 var targetSong //Object containing information on current song
