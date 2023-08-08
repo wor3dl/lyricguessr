@@ -9,6 +9,10 @@ var unpunctuatedLyrics = []
 var unpunctuatedLyricsOriginal = []
 var lastGuess = []
 
+var startTime
+var currentTime = "00:00:00"
+var correctWords = []
+
 //Everything inside here is executed after the target song has been loaded
 retrieveSong(songList[dayOffset]).then(data => {
 
@@ -28,6 +32,24 @@ retrieveSong(songList[dayOffset]).then(data => {
     lastGuess.forEach((element) => {
         element.style = "color: white"
     })
+
+    //Retrieving Current Game
+
+    var current = loadCurrentGame()
+
+    if (current) {
+  
+      correctWords = current.words
+      startTime = current.start
+  
+      for (let word of correctWords) {
+          UnhideLyric(word)
+      }
+  
+    } else {
+      startTime = getStringFromTime(new Date())
+    }
+
     
 })
 
@@ -54,6 +76,8 @@ SubmitGuess = function() {
     if (unpunctuatedLyrics.includes(inputString)) {
         UnhideLyric(inputString)
         GuessFlash("green")
+        correctWords.push(inputString)
+        saveCurrentGame(startTime, correctWords)
     } else {
         if (unpunctuatedLyricsOriginal.includes(inputString)) {
             GuessFlash("orange")
@@ -108,4 +132,3 @@ function showAlert(message, colour = "", duration = 1000) {
   }
   
 
-  loadCurrentGame()

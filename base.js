@@ -33,17 +33,71 @@ async function retrieveSong(name) {
     return data
 }
 
+function getStringFromDate(date) {
+  return`${date.getUTCDate()}/${date.getUTCMonth()}/${date.getUTCFullYear()}`
+}
+
+function getStringFromTime(date) {
+  return `${date.getUTCHours()}:${date.getUTCMinutes()}:${date.getUTCSeconds()}`
+}
+
 function loadCurrentGame() {
 
   let current = JSON.parse(window.localStorage.getItem("current"))
-
   if (current) {
-    if (current.date.getDate() == (new Date()).getDate()) {
-      console.log("Game Exists")
+    if (current.date == getStringFromDate(new Date())) {
+      return current
     } else {
-      console.log("Need to update to new game")
+      return null
     }
   } else {
-    console.log("first time playing")
+    firstTime()
+    return null
   }
+}
+
+function retrieveStats() {
+  let stats = window.localStorage.getItem("stats")
+  if (stats) {
+    stats = JSON.parse(stats)
+    return stats
+  }
+}
+
+function saveFinishedGame(gameStats) {
+
+  let stats = window.localStorage.getItem("stats")
+
+  if (!stats) {
+    stats = {}
+  } else {
+    stats = JSON.parse(stats)
+  }
+
+  if (!Object.keys(stats).includes(getStringFromDate(date))) {
+    stats[getStringFromDate(new Date())] = gameStats
+  } else {
+    console.log("Already Saved Today's Game")
+  }
+
+}
+
+
+//startTime should be a string returned from getStringFromTime
+function saveCurrentGame(startTime, words) {
+
+  let current = {
+    date:getStringFromDate(new Date()),
+    start:startTime,
+    words:words,
+  }
+
+  window.localStorage.setItem("current", JSON.stringify(current))
+
+}
+
+function firstTime() {
+  let current = {date:new Date()}
+  window.localStorage.setItem("current", JSON.stringify(current))
+  window.localStorage.setItem("stats", JSON.stringify({}))
 }
