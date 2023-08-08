@@ -2,8 +2,6 @@ const lyricContainer = document.getElementById("lyric-container")
 const inputField = document.getElementById("input-container")
 const lyricInput = document.getElementById("lyric-input")
 
-// var lyrics = targetSong.lyrics.split(" ")
-//var lyrics = ["a", "b", "jamO'#'n123A", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", "a", "b", "jamona", ]
 var lyrics = []
 var unpunctuatedLyrics = []
 
@@ -21,6 +19,8 @@ retrieveSong(songList[dayOffset]).then(data => {
         unpunctuatedLyrics.push(lyric.replaceAll(/[^A-Za-z]/g, "").toLowerCase())
     })
 
+    UnhideLyric("")
+    
 })
 
 function createLyric(lyric) {
@@ -36,13 +36,6 @@ function UnhideLyric(lyric) {
         lyricContainer.children[index].style = "color: white"
     }
 }
-
-// lyricInput.oninput = function(input) {
-//     let inputString = lyricInput.value.replaceAll(/[^A-Za-z]/g, "").toLowerCase()
-//     UnhideLyric(inputString)
-//     console.log(inputString)
-//     console.log(input)
-// }
 
 SubmitGuess = function() {
     let inputString = lyricInput.value.replaceAll(/[^A-Za-z]/g, "").toLowerCase()
@@ -65,5 +58,3 @@ document.onkeydown = function(keyPressed) {
         SubmitGuess()
     }
 }
-
-// window.onload = () => {lyricInput.oninput()}
