@@ -33,4 +33,17 @@ async function retrieveSong(name) {
     return data
 }
 
+function loadCurrentGame() {
 
+  let current = JSON.parse(window.localStorage.getItem("current"))
+
+  if (current) {
+    if (current.date.getDate() == (new Date()).getDate()) {
+      console.log("Game Exists")
+    } else {
+      console.log("Need to update to new game")
+    }
+  } else {
+    console.log("first time playing")
+  }
+}

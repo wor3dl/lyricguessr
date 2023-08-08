@@ -107,3 +107,5 @@ function showAlert(message, colour = "", duration = 1000) {
     }, duration)
   }
   
+
+  loadCurrentGame()
