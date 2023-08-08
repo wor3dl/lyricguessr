@@ -2,6 +2,8 @@ const lyricContainer = document.getElementById("lyric-container")
 const inputField = document.getElementById("input-container")
 const lyricInput = document.getElementById("lyric-input")
 
+var alertContainer = document.getElementById("alert-container")
+
 var lyrics = []
 var unpunctuatedLyrics = []
 var unpunctuatedLyricsOriginal = []
@@ -89,3 +91,19 @@ inputField.oninput = function() {
         }
     }
 }
+
+function showAlert(message, colour = "", duration = 1000) {
+    const alert = document.createElement("div")
+    alert.textContent = message
+    alert.classList.add("alert")
+    alertContainer.appendChild(alert)
+    if (duration == null) return
+  
+    setTimeout(() => {
+      alert.classList.add("hide")
+      alert.addEventListener("transitionend", () => {
+        alert.remove()
+      })
+    }, duration)
+  }
+  
