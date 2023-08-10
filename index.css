@@ -16,8 +16,8 @@ body {
 }
 
 h1 {
-    font-family: "Foldit", serif;
     font-size: 5dvh;
+    color: white;
 }
 
 lyric {
@@ -31,6 +31,7 @@ lyric {
 }
 
 #header-container {
+    display: flex;
     height: 15dvh;
     border-width: 1dvh;
     border-color: grey;
@@ -38,7 +39,44 @@ lyric {
     border-top-style: double;
     border-left-style: double;
     border-right-style: double;
+    justify-content: space-between;
 }
+
+#thumbnail {
+    height: 10dvh;
+    aspect-ratio: 1/1;
+    /* border: 0.2em solid grey; */
+}
+
+#song-info {
+    display:flex;
+    align-items: center;
+    gap: 2dvh;
+}
+
+#song-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#song-name {
+    font-size: 1.5em;
+}
+
+#song-artist {
+    font-size: 1em;
+    color: rgb(197, 197, 197);
+}
+
+#progress {
+    display: flex;
+    font-size: 2em;
+    color: white;
+    align-items: center;
+    margin-right: 1dvh;
+}
+
 
 #lyric-container {
     display: flex;

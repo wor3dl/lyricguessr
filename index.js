@@ -17,6 +17,10 @@ var correctWords = []
 retrieveSong(songList[dayOffset]).then(data => {
 
     targetSong = data
+
+    document.getElementById("song-name").innerText = targetSong.title
+    document.getElementById("song-artist").innerText = targetSong.artist
+    document.getElementById("thumbnail").src = targetSong.albumArt
         
     for (let header of Object.keys(targetSong.lyrics)) {
         lyrics = lyrics.concat(targetSong.lyrics[header].lyrics)
