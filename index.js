@@ -98,6 +98,9 @@ GuessFlash = function(colour) {
 }
 
 document.onkeydown = function(keyPressed) {
+
+    lyricInput.focus()
+
     if (keyPressed.key == "Enter") {
         SubmitGuess()
     }
