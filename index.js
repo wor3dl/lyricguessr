@@ -54,6 +54,9 @@ retrieveSong(songList[dayOffset]).then(data => {
       startTime = getStringFromTime(new Date())
     }
 
+    document.getElementById("total").innerText = unpunctuatedLyrics.length
+
+
     
 })
 

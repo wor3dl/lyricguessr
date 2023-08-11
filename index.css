@@ -69,13 +69,43 @@ lyric {
     color: rgb(197, 197, 197);
 }
 
-#progress {
+
+
+#time {
     display: flex;
     font-size: 2em;
     color: white;
     align-items: center;
     margin-right: 1dvh;
 }
+
+#progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-top: 3dvh;
+    padding-bottom: 3dvh;
+}
+
+
+#correct {
+    font-size: 1em;
+    align-self: flex-start;
+    /* position: absolute; */
+}
+
+#slash {
+    position: absolute;
+    align-self: center;
+    transform: rotate(45deg);
+}
+
+#total {
+    align-self: flex-end;
+    font-size: 1em;
+}
+
 
 
 #lyric-container {
