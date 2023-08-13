@@ -10,9 +10,9 @@ var unpunctuatedLyricsOriginal = []
 var lastGuess = []
 
 var startTime
-var currentTime = "00:00:00"
 var correctWords = []
 var correctCount = 0
+var timeUpdateInterval
 
 //Everything inside here is executed after the target song has been loaded
 retrieveSong(songList[dayOffset]).then(data => {
@@ -50,16 +50,25 @@ retrieveSong(songList[dayOffset]).then(data => {
       for (let word of correctWords) {
           UnhideLyric(word)
       }
+
+      timeUpdateInterval = setInterval(updateTime, 500)
   
     } else {
-      startTime = getStringFromTime(new Date())
+        //Run shit here for the first time the game is opened this day
     }
 
     document.getElementById("total").innerText = unpunctuatedLyrics.length
-
-
     
 })
+
+function updateTime() {
+    if (!startTime) return
+    let passedTime = (new Date()).getTime()-startTime
+    let hours = Math.floor(passedTime/1000/60/60)
+    let minutes = Math.floor(passedTime/1000/60)-(hours*60)
+    let seconds = Math.floor(passedTime/1000) - (hours*60*60) - (minutes*60)
+    document.getElementById("time").innerHTML = (hours > 0 ? hours.toString().padStart(2, "0")+":" : "") + minutes.toString().padStart(2, "0")+":" + seconds.toString().padStart(2, "0")
+}
 
 function createLyric(lyric) {
     let lyricDOM = document.createElement("lyric")
@@ -89,6 +98,12 @@ SubmitGuess = function() {
         GuessFlash("green")
         correctWords.push(inputString)
         saveCurrentGame(startTime, correctWords)
+
+        if (!timeUpdateInterval) {
+            timeUpdateInterval = setInterval(updateTime, 500)
+            startTime = (new Date()).getTime()
+        }
+
     } else {
         if (unpunctuatedLyricsOriginal.includes(inputString)) {
             GuessFlash("orange")

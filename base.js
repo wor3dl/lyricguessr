@@ -37,10 +37,6 @@ function getStringFromDate(date) {
   return`${date.getUTCDate()}/${date.getUTCMonth()}/${date.getUTCFullYear()}`
 }
 
-function getStringFromTime(date) {
-  return `${date.getUTCHours()}:${date.getUTCMinutes()}:${date.getUTCSeconds()}`
-}
-
 function loadCurrentGame() {
 
   let current = JSON.parse(window.localStorage.getItem("current"))
@@ -83,7 +79,6 @@ function saveFinishedGame(gameStats) {
 }
 
 
-//startTime should be a string returned from getStringFromTime
 function saveCurrentGame(startTime, words) {
 
   let current = {
