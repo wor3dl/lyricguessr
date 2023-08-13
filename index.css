@@ -82,7 +82,8 @@ lyric {
 #progress {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-self: center;
+    align-items: last baseline;
     height: 100%;
     padding-top: 3dvh;
     padding-bottom: 3dvh;
@@ -90,20 +91,17 @@ lyric {
 
 
 #correct {
-    font-size: 1em;
-    align-self: flex-start;
-    /* position: absolute; */
+    font-size: 2em;
 }
 
 #slash {
-    position: absolute;
-    align-self: center;
-    transform: rotate(45deg);
+    font-size: 1em;
+    color: rgb(190, 190, 190);
 }
 
 #total {
-    align-self: flex-end;
     font-size: 1em;
+    color: rgb(190, 190, 190);
 }
 
 

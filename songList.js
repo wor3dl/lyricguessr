@@ -1,1 +1,1 @@
-const songList = ["Mr Worldwide by Pete & Bas"]
+const songList = ["Poker Face by Lady Gaga"]

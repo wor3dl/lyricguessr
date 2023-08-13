@@ -12,6 +12,7 @@ var lastGuess = []
 var startTime
 var currentTime = "00:00:00"
 var correctWords = []
+var correctCount = 0
 
 //Everything inside here is executed after the target song has been loaded
 retrieveSong(songList[dayOffset]).then(data => {
@@ -75,7 +76,10 @@ function UnhideLyric(lyric) {
         unpunctuatedLyrics[index] = null
         lyricContainer.children[index].style = "color: white; background-color: green"
         lastGuess.push(lyricContainer.children[index])
+        correctCount += 1
     }
+    document.getElementById("correct").innerHTML = correctCount.toString()
+
 }
 
 SubmitGuess = function() {
