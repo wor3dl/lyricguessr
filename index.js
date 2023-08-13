@@ -85,7 +85,12 @@ function UnhideLyric(lyric) {
         unpunctuatedLyrics[index] = null
         lyricContainer.children[index].style = "color: white; background-color: green"
         lastGuess.push(lyricContainer.children[index])
-        correctCount += 1
+        if (!(lyric === "")) {
+            correctCount += 1
+            if (correctCount >= unpunctuatedLyrics.length) {
+                console.log("100%")
+            }
+        }
     }
     document.getElementById("correct").innerHTML = correctCount.toString()
 
