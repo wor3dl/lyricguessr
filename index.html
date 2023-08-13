@@ -16,11 +16,13 @@
 <body>
 
   <div id="alert-container"></div>
-  <div class="popup">hello?</div>
 
   <div id="header-container">
-    <img src="assets/lyricguessrlogo1.png" style="height: 12dvh; margin-left: 0.5dvh; margin-top: 0.5dvh;"/>
-    <div id="song-info"><img id="thumbnail"/>
+    <logo>
+      <img src="assets/lyricguessrlogo1.png" style="height: 12dvh; margin-left: 0.5dvh; margin-top: 0.5dvh; position: absolute;"/>
+    </logo>
+    <titles>
+      <img id="thumbnail"/>
       <div id="song-title">
         <h1 id="song-name"></h1>
         <h1 id="song-artist"></h1>
@@ -31,9 +33,8 @@
         <h1 id="total">???</h1>
       </div>
       <!-- <div id="progress" class="timer"><div class="inner-timer">200/420</div></div> -->
-    </div>
-    <div id="time">00:00</div>
-    
+    </titles>
+    <buttons></buttons>
   </div>
   <div id="lyric-container"></div>
   <div id="input-container">
