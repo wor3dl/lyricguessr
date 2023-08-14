@@ -32,6 +32,9 @@ retrieveSong(songList[dayOffset]).then(data => {
         unpunctuatedLyrics.push(lyric.replaceAll(/[^A-Za-z]/g, "").toLowerCase())
         unpunctuatedLyricsOriginal.push(lyric.replaceAll(/[^A-Za-z]/g, "").toLowerCase())
     })
+    let lyricDOM = document.createElement("fakelyric")
+    lyricDOM.innerHTML = ""
+    lyricContainer.appendChild(lyricDOM)
 
     UnhideLyric("")
     lastGuess.forEach((element) => {
