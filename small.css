@@ -28,7 +28,7 @@
         font-size: 1.5em;
         white-space: nowrap;
         transform: translateX(100%);
-        animation: scroll 10s linear infinite;
+        animation: scroll 8s linear infinite;
         margin-top: 3.75dvh;
         flex-direction: row;
         gap: 1dvh;
@@ -41,10 +41,10 @@
 
     @keyframes scroll {
         from {
-          transform: translateX(20%);
+          transform: translateX(100%);
         }
         to {
-          transform: translateX(-80%);
+          transform: translateX(-100%);
         }
     }
 
