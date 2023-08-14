@@ -102,6 +102,12 @@ buttons {
     color: rgb(197, 197, 197);
 }
 
+#dash {
+    font-size: 1em;
+    color: rgb(197, 197, 197);
+    display: none;
+}
+
 #progress-container {
     position: absolute;
     display: flex;

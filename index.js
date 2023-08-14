@@ -168,4 +168,7 @@ function showAlert(message, colour = "", duration = 1000) {
     }, duration)
   }
   
+function getOverflowPercent() {
+    return document.getElementById("song-name").scrollWidth/document.getElementById("song-name").offsetWidth
+}
 

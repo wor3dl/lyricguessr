@@ -3,9 +3,50 @@
         font-size: 0.8em;
     }
     #song-artist {
-        font-size: 0.5em;
+        font-size: 0.6em;
     }
     logo {
         content: url("assets/lyricguessrlogosmall.svg");
     }
+    buttons {
+        gap: 1dvh;
+    }
+
+    #scroller {
+        display: flex;
+        align-self: center;
+        flex-direction: column;
+        overflow-y: hidden;
+        position: relative;
+        align-items: center;
+        height: 100%;
+        width: 50dvh;
+    }
+
+    #song-title {
+        position: absolute;
+        font-size: 1.5em;
+        white-space: nowrap;
+        transform: translateX(100%);
+        animation: scroll 10s linear infinite;
+        margin-top: 3.75dvh;
+        flex-direction: row;
+        gap: 1dvh;
+    }
+
+    #dash {
+        display: inline;
+    }
+    
+
+    @keyframes scroll {
+        from {
+          transform: translateX(20%);
+        }
+        to {
+          transform: translateX(-80%);
+        }
+    }
+
+
   }
