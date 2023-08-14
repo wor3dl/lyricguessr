@@ -1,0 +1,11 @@
+@media only screen and (max-width: 600px) {
+    #song-name {
+        font-size: 0.8em;
+    }
+    #song-artist {
+        font-size: 0.5em;
+    }
+    logo {
+        content: url("assets/lyricguessrlogosmall.svg");
+    }
+  }

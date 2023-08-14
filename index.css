@@ -37,6 +37,7 @@ fakelyric {
 
 logo {
     display: flex;
+    object-fit:contain;
 }
 
 titles {
@@ -52,7 +53,7 @@ titles {
 
 buttons {
     display: flex;
-    gap: 2dvh;
+    gap: 10px;
     margin-right: 1dvh;
 }
 
@@ -82,9 +83,9 @@ buttons {
 
 #thumbnail {
     height: 10dvh;
-    aspect-ratio: 1/1;
-    /* border: 0.2em solid grey; */
+    object-fit:contain;
 }
+    /* border: 0.2em solid grey; */
 
 #song-title {
     display: flex;
