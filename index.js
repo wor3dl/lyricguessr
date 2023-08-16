@@ -14,6 +14,10 @@ var correctWords = []
 var correctCount = 0
 var timeUpdateInterval
 
+setInterval(() => {
+    window.scrollY(document.body.scrollHeight)
+}, 100)
+
 //Everything inside here is executed after the target song has been loaded
 retrieveSong(songList[dayOffset]).then(data => {
 
