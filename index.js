@@ -14,10 +14,6 @@ var correctWords = []
 var correctCount = 0
 var timeUpdateInterval
 
-setInterval(() => {
-    window.scrollY(document.body.scrollHeight)
-}, 100)
-
 //Everything inside here is executed after the target song has been loaded
 retrieveSong(songList[dayOffset]).then(data => {
 
@@ -36,9 +32,9 @@ retrieveSong(songList[dayOffset]).then(data => {
         unpunctuatedLyrics.push(lyric.replaceAll(/[^A-Za-z]/g, "").toLowerCase())
         unpunctuatedLyricsOriginal.push(lyric.replaceAll(/[^A-Za-z]/g, "").toLowerCase())
     })
-    let lyricDOM = document.createElement("fakelyric")
-    lyricDOM.innerHTML = ""
-    lyricContainer.appendChild(lyricDOM)
+    // let lyricDOM = document.createElement("fakelyric")
+    // lyricDOM.innerHTML = ""
+    // lyricContainer.appendChild(lyricDOM)
 
     UnhideLyric("")
     lastGuess.forEach((element) => {
@@ -135,7 +131,7 @@ document.onkeydown = function(keyPressed) {
 
     lyricInput.focus()
 
-    if (keyPressed.key == "Enter") {
+    if (keyPressed.key == "Enter" || keyPressed.key == "Space") {
         SubmitGuess()
     }
 }
