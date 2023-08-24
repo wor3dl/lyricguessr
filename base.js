@@ -19,13 +19,23 @@ const hash = function(str, seed = 0) {
     }
   }
 
-const offsetFromDate = new Date("3 August 2023")
-const msOffset = new Date("3 August 2023") - offsetFromDate
+var debug = true
+
+const offsetFromDate = new Date("24 August 2023")
+const msOffset = getTodaysDate() - offsetFromDate
 const dayOffset = Math.floor(msOffset / 1000 / 60 / 60 / 24)
 
 var targetSong //Object containing information on current song
 var formattedLyrics = []
 var repeatChorus = false
+
+function getTodaysDate() {
+  if (debug) {
+    return new Date("26 August 2023")
+  } else {
+    return new Date()
+  }
+}
 
 async function retrieveSong(name) {
     var song = await fetch(`songs/${name}.song`)
@@ -41,7 +51,7 @@ function loadCurrentGame() {
 
   let current = JSON.parse(window.localStorage.getItem("current"))
   if (current) {
-    if (current.date == getStringFromDate(new Date())) {
+    if (current.date == getStringFromDate(getTodaysDate())) {
       return current
     } else {
       return null
@@ -70,8 +80,8 @@ function saveFinishedGame(gameStats) {
     stats = JSON.parse(stats)
   }
 
-  if (!Object.keys(stats).includes(getStringFromDate(new Date()))) {
-    stats[getStringFromDate(new Date())] = gameStats
+  if (!Object.keys(stats).includes(getStringFromDate(getTodaysDate()))) {
+    stats[getStringFromDate(getTodaysDate())] = gameStats
     window.localStorage.setItem("stats", JSON.stringify(stats))
   } else {
     console.log("Already Saved Today's Game")
@@ -80,11 +90,12 @@ function saveFinishedGame(gameStats) {
 }
 
 
-function saveCurrentGame(startTime, words) {
+function saveCurrentGame(startTime, words, endTime=undefined) {
 
   let current = {
-    date:getStringFromDate(new Date()),
+    date:getStringFromDate(getTodaysDate()),
     start:startTime,
+    endTime:endTime,
     words:words,
   }
 
@@ -93,7 +104,7 @@ function saveCurrentGame(startTime, words) {
 }
 
 function firstTime() {
-  let current = {date:new Date()}
+  let current = {date:getTodaysDate()}
   window.localStorage.setItem("current", JSON.stringify(current))
   window.localStorage.setItem("stats", JSON.stringify({}))
 }

@@ -57,14 +57,33 @@
       <div class="tab-button" id="all-time-button" onclick="allTimeClicked()">All Time</div>
     </div>
     <div class="stats-tab" id="today">
-      <h1 id="percent-text"></h1>
-      <div id="progress-end">
-        <h1 id="correct-end">0</h1>
-        <h1 id="slash-end">/</h1>
-        <h1 id="total-end">???</h1>
+      <h1 id="nice-message">Nice Work!</h1>
+      <h1 id="time-end">00:00</h1>
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h1 id="percent-text">??%</h1>
+        <div id="progress-end">
+          <h1 id="correct-end">0</h1>
+          <h1 id="slash-end">/</h1>
+          <h1 id="total-end">???</h1>
+        </div>
       </div>
+      <h1 id="wpm-end">???wpm</h1>
     </div>
     <div class="stats-tab" id="all-time">
+
+      <h1>Your Best:</h1>
+      <div id="best">
+        <img id="best-thumbnail"/>
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h1 id="best-title"></h1>
+        <h1 id="best-artist"></h1>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <h1 id="best-time"></h1>
+          <h1 id="best-percent"></h1>
+        </div>
+      </div>
+
     </div>
   </div>
 </body>

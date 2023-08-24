@@ -94,7 +94,6 @@ settings {
     height: 10dvh;
     object-fit:contain;
 }
-    /* border: 0.2em solid grey; */
 
 #song-title {
     display: flex;
@@ -169,28 +168,64 @@ settings {
 
 
 #correct-end {
-    font-size: 3em;
+    font-size: 1.3em;
 }
 
 #slash-end {
-    font-size: 2em;
+    font-size: 1em;
     color: rgb(190, 190, 190);
 }
 
 #total-end {
-    font-size: 2em;
+    font-size: 1em;
     color: rgb(190, 190, 190);
 }
 
 #percent-text {
-    font-size: 1.5em;
+    font-size: 3em;
     text-align: center;
 }
 
-#percent-score {
+#time-end {
+    font-size: 3em;
+}
+
+#wpm-end {
     font-size: 2em;
 }
 
+#best {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2dvh;
+    overflow: visible;
+    flex-wrap: wrap;
+}
+
+#best-title {
+    font-size: 1.6em;
+    text-align: center;
+}
+
+#best-artist {
+    font-size: 1em;
+    color: rgb(197, 197, 197);
+}
+
+#best-thumbnail {
+    height: 10dvh;
+    object-fit:contain;
+}
+
+#best-percent {
+    font-size: 1.5em;
+}
+
+#best-time {
+    font-size: 1.5em;
+}
 
 
 #end-screen {
@@ -232,11 +267,16 @@ settings {
 
 .stats-tab {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: rgb(17, 17, 17);
     border-left: 0.6dvh solid white;
     border-right: 0.6dvh solid white;
     border-bottom: 0.6dvh solid white;
     width: 100%;
+    padding: 1dvh;
+    gap: 2dvh;
 }
 
 #all-time {

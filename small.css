@@ -53,7 +53,15 @@
     }
 
     .tab-button {
-        font-size: 1em;
+        font-size: 1.5em;
+    }
+
+    #nice-message {
+        font-size: 2em;
+    }
+
+    #best {
+        font-size: 0.5em;
     }
 
 
