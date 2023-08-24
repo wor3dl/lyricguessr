@@ -70,8 +70,9 @@ function saveFinishedGame(gameStats) {
     stats = JSON.parse(stats)
   }
 
-  if (!Object.keys(stats).includes(getStringFromDate(date))) {
+  if (!Object.keys(stats).includes(getStringFromDate(new Date()))) {
     stats[getStringFromDate(new Date())] = gameStats
+    window.localStorage.setItem("stats", JSON.stringify(stats))
   } else {
     console.log("Already Saved Today's Game")
   }

@@ -91,7 +91,7 @@ function UnhideLyric(lyric) {
         if (!(lyric === "")) {
             correctCount += 1
             if (correctCount >= unpunctuatedLyrics.length) {
-                console.log("100%")
+                endGame()
             }
         }
     }
@@ -131,13 +131,13 @@ document.onkeydown = function(keyPressed) {
 
     lyricInput.focus()
 
-    if (keyPressed.key == "Enter" || keyPressed.key == "Space") {
+    if (keyPressed.key == "Enter" || keyPressed.key == " ") {
         SubmitGuess()
     }
 }
 
 inputField.oninput = function() {
-    let inputString = lyricInput.value.replaceAll(/[^A-Za-z]/g, "").toLowerCase()
+    let inputString = lyricInput.value = lyricInput.value.replaceAll(/[^A-Za-z]/g, "").toLowerCase()
     if (inputString == "") {
         lyricInput.style = `background-color: transparent`
         return
@@ -172,3 +172,24 @@ function getOverflowPercent() {
     return document.getElementById("song-name").scrollWidth/document.getElementById("song-name").offsetWidth
 }
 
+
+function endGame() {
+
+    document.getElementById("lyric-container").style.display = "none"
+    document.getElementById("input-container").style.display = "none"
+    document.getElementById("end-screen").style.display = "flex"
+    document.getElementById("percent-text").innerHTML = `You got <h1 id='percent-score'>${Math.round((correctCount/unpunctuatedLyrics.length)*100)}%</h1> of the lyrics correct`
+    document.getElementById("correct-end").innerHTML = correctCount.toString()
+    document.getElementById("total-end").innerHTML = unpunctuatedLyrics.length.toString()
+
+    clearInterval(timeUpdateInterval)
+
+    let stats = {
+        correct:correctCount,
+        total:unpunctuatedLyrics.length,
+        time:(new Date()).getTime()-startTime,
+    }
+
+    saveFinishedGame(stats)
+
+}

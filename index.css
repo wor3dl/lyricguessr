@@ -58,6 +58,14 @@ buttons {
     margin-right: 1dvh;
 }
 
+settings {
+    display: block;
+    position: fixed;
+    background-color: black;
+    width: 100dvw;
+    height: 100dvh;
+}
+
 #stop:hover {
     filter: invert(41%) sepia(69%) saturate(3321%) hue-rotate(337deg) brightness(101%) contrast(107%);
 }
@@ -152,6 +160,46 @@ buttons {
     color: rgb(190, 190, 190);
 }
 
+
+#progress-end {
+    display: flex;
+    align-items: last baseline;
+    pointer-events: none;
+}
+
+
+#correct-end {
+    font-size: 3em;
+}
+
+#slash-end {
+    font-size: 2em;
+    color: rgb(190, 190, 190);
+}
+
+#total-end {
+    font-size: 2em;
+    color: rgb(190, 190, 190);
+}
+
+#percent-text {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#percent-score {
+    font-size: 2em;
+}
+
+#end-screen {
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1dvh;
+}
 
 
 #lyric-container {
