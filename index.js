@@ -181,6 +181,7 @@ function endGame() {
     document.getElementById("percent-text").innerHTML = `You got <h1 id='percent-score'>${Math.round((correctCount/unpunctuatedLyrics.length)*100)}%</h1> of the lyrics correct`
     document.getElementById("correct-end").innerHTML = correctCount.toString()
     document.getElementById("total-end").innerHTML = unpunctuatedLyrics.length.toString()
+    document.getElementById("stop").style.display = "none"
 
     clearInterval(timeUpdateInterval)
 
@@ -191,5 +192,22 @@ function endGame() {
     }
 
     saveFinishedGame(stats)
+
+}
+
+function todayClicked() {
+    document.getElementById("today").style.display = "flex"
+    document.getElementById("today-button").classList.add("selected")
+    document.getElementById("all-time").style.display = "none"
+    document.getElementById("all-time-button").classList.remove("selected")
+
+
+}
+
+function allTimeClicked() {
+    document.getElementById("today").style.display = "none"
+    document.getElementById("today-button").classList.remove("selected")
+    document.getElementById("all-time").style.display = "flex"
+    document.getElementById("all-time-button").classList.add("selected")
 
 }

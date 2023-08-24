@@ -34,7 +34,7 @@
 
     </titles>
     <buttons>
-      <img title="Stop" src="assets/stop-circle.svg" id="stop" class="header-button"/>
+      <img title="Stop" src="assets/stop-circle.svg" id="stop" class="header-button" onclick="endGame()"/>
       <img src="assets/gear-fill.svg" id="gear" class="header-button"/>
     </buttons>
   </div>
@@ -52,11 +52,19 @@
   </div>
 
   <div id="end-screen">
-    <h1 id="percent-text"></h1>
-    <div id="progress-end">
-      <h1 id="correct-end">0</h1>
-      <h1 id="slash-end">/</h1>
-      <h1 id="total-end">???</h1>
+    <div class="tab-buttons">
+      <div class="tab-button selected" id="today-button" onclick="todayClicked()">Today</div>
+      <div class="tab-button" id="all-time-button" onclick="allTimeClicked()">All Time</div>
+    </div>
+    <div class="stats-tab" id="today">
+      <h1 id="percent-text"></h1>
+      <div id="progress-end">
+        <h1 id="correct-end">0</h1>
+        <h1 id="slash-end">/</h1>
+        <h1 id="total-end">???</h1>
+      </div>
+    </div>
+    <div class="stats-tab" id="all-time">
     </div>
   </div>
 </body>

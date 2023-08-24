@@ -48,5 +48,13 @@
         }
     }
 
+    #end-screen {
+        width: 70%;
+    }
+
+    .tab-button {
+        font-size: 1em;
+    }
+
 
   }

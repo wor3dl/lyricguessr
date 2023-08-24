@@ -191,15 +191,58 @@ settings {
     font-size: 2em;
 }
 
+
+
 #end-screen {
-    width: 100%;
+    width: 50%;
     height: 100%;
     display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-top: 1dvh;
+    margin: auto;
+    align-self: center;
 }
+
+.tab-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.tab-button {
+    display: flex;
+    color: white;
+    background-color: rgb(17, 17, 17);
+    border: 0.6dvh solid white;
+    font-size: 2em;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.tab-button.selected {
+    color: rgb(17, 17, 17);
+    background-color: white;
+    border-color: white;
+}
+
+.stats-tab {
+    display: flex;
+    background-color: rgb(17, 17, 17);
+    border-left: 0.6dvh solid white;
+    border-right: 0.6dvh solid white;
+    border-bottom: 0.6dvh solid white;
+    width: 100%;
+}
+
+#all-time {
+    display: none;
+}
+
 
 
 #lyric-container {
