@@ -242,6 +242,14 @@ function allTimeClicked() {
 
 }
 
+function openSettings() {
+    document.getElementById("settings").style.display = "flex"
+}
+
+function exitSettings() {
+    document.getElementById("settings").style.display = "none"
+}
+
 function calculateAllTimeStats() {
 
     let stats = retrieveStats()

@@ -14,6 +14,7 @@
   <script src="index.js" defer></script>
   <title>Lyric Guessr</title>
 </head>
+
 <body>
 
   <div id="alert-container"></div>
@@ -35,9 +36,10 @@
     </titles>
     <buttons>
       <img title="Stop" src="assets/stop-circle.svg" id="stop" class="header-button" onclick="endGame()"/>
-      <img src="assets/gear-fill.svg" id="gear" class="header-button"/>
+      <img src="assets/gear-fill.svg" id="gear" class="header-button" onclick="openSettings()"/>
     </buttons>
   </div>
+
   <div id="lyric-container"></div>
   <div id="input-container">
     <input id="lyric-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
@@ -86,5 +88,13 @@
 
     </div>
   </div>
+
+  <div id="settings">
+    <div id="settings-box">
+      <img src="assets/x.svg" id="exit-settings" onclick="exitSettings()"/>
+      <h1 style="font-size: 1.8em;">Settings</h1>
+    </div>
+  </div>
+
 </body>
 </html>

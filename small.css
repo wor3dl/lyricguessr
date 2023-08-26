@@ -64,5 +64,9 @@
         font-size: 0.5em;
     }
 
+    #settings-box {
+        width: 90%;
+    }
+
 
   }
