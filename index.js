@@ -198,7 +198,7 @@ function getOverflowPercent() {
 
 function getTotalLyrics() {
     let count = 0
-    unpunctuatedLyrics.forEach(function(element) {
+    unpunctuatedLyricsOriginal.forEach(function(element) {
         if (element != "") {count++}
     })
     return count
