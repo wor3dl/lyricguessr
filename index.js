@@ -67,7 +67,7 @@ retrieveSong(fullSongName).then(data => {
         //Run shit here for the first time the game is opened this day
     }
 
-    document.getElementById("total").innerText = unpunctuatedLyrics.length
+    document.getElementById("total").innerText = getTotalLyrics()
     
 })
 
@@ -196,6 +196,13 @@ function getOverflowPercent() {
     return document.getElementById("song-name").scrollWidth/document.getElementById("song-name").offsetWidth
 }
 
+function getTotalLyrics() {
+    let count = 0
+    unpunctuatedLyrics.forEach(function(element) {
+        if (element != "") {count++}
+    })
+    return count
+}
 
 function endGame() {
     if (!endTime) endTime = (new Date()).getTime()
@@ -205,7 +212,7 @@ function endGame() {
     document.getElementById("end-screen").style.display = "flex"
     document.getElementById("percent-text").innerHTML = Math.round((correctCount/unpunctuatedLyrics.length)*100).toString()+"%"
     document.getElementById("correct-end").innerHTML = correctCount.toString()
-    document.getElementById("total-end").innerHTML = unpunctuatedLyrics.length.toString()
+    document.getElementById("total-end").innerHTML = getTotalLyrics()
     document.getElementById("stop").style.display = "none"
     document.getElementById("time-end").innerHTML = getTimeString(getEndTime()-startTime)
     //This doesn't really make sense as you don't type all of these words but i needed to pad out the stats
