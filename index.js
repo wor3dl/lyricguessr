@@ -209,7 +209,7 @@ function endGame() {
     document.getElementById("stop").style.display = "none"
     document.getElementById("time-end").innerHTML = getTimeString(getEndTime()-startTime)
     //This doesn't really make sense as you don't type all of these words but i needed to pad out the stats
-    document.getElementById("wpm-end").innerHTML = (Math.round(correctCount/((getEndTime()-startTime)/100/60))/10).toString()+" wpm"
+    document.getElementById("wpm-end").innerHTML = startTime != undefined ? (Math.round(correctCount/((getEndTime()-startTime)/100/60))/10).toString()+" wpm" : 0 + " wpm"
 
     clearInterval(timeUpdateInterval)
 
