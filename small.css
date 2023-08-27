@@ -64,9 +64,14 @@
         font-size: 0.5em;
     }
 
-    #settings-box {
+    /* #settings-box {
         width: 90%;
+    } */
+
+    .bi {
+        width: 15dvh;
     }
+
 
 
   }

@@ -66,15 +66,12 @@ settings {
     height: 100dvh;
 }
 
-#stop:hover {
-    filter: invert(41%) sepia(69%) saturate(3321%) hue-rotate(337deg) brightness(101%) contrast(107%);
-}
-
-.header-button {
-    width: 8dvh;
-    filter: invert(100%);
+.bi {
+    color: white;
     display: flex;
     aspect-ratio: 1/1;
+    width: 8dvh;
+    margin: auto;
 }
 
 #header-container {
