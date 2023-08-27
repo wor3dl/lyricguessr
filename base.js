@@ -31,7 +31,7 @@ var repeatChorus = false
 
 function getTodaysDate() {
   if (debug) {
-    return new Date("26 August 2023")
+    return new Date("31 August 2023")
   } else {
     return new Date()
   }
