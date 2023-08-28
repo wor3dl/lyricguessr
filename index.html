@@ -23,6 +23,20 @@
 
   <div id="alert-container"></div>
 
+  <div id="input-container">
+    <input id="lyric-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <div id="progress-container">
+      <div id="progress">
+        <h1 id="correct">0</h1>
+        <h1 id="slash">/</h1>
+        <h1 id="total">???</h1>
+      </div>
+      <div id="time">00:00</div>
+    </div>
+  </div>
+
+  <div id="lyric-container"></div>
+
   <div id="header-container">
     <logo>
       <img src="assets/lyricguessrlogo1.png" style="height: 12dvh; margin-left: 0.5dvh; margin-top: 0.5dvh;"/>
@@ -45,19 +59,6 @@
       </svg>
       <!-- <img src="assets/gear-fill.svg" id="gear" class="header-button" onclick="openSettings()"/> -->
     </buttons>
-  </div>
-
-  <div id="lyric-container"></div>
-  <div id="input-container">
-    <input id="lyric-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-    <div id="progress-container">
-      <div id="progress">
-        <h1 id="correct">0</h1>
-        <h1 id="slash">/</h1>
-        <h1 id="total">???</h1>
-      </div>
-      <div id="time">00:00</div>
-    </div>
   </div>
 
   <div id="end-screen">
