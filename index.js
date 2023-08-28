@@ -198,7 +198,7 @@ function getOverflowPercent() {
 
 function getTotalLyrics() {
     let count = 0
-    unpunctuatedLyricsOriginal.forEach(function(element) {
+    unpunctuatedLyrics.forEach(function(element) {
         if (element != "") {count++}
     })
     return count
@@ -210,7 +210,7 @@ function endGame() {
     document.getElementById("lyric-container").style.display = "none"
     document.getElementById("input-container").style.display = "none"
     document.getElementById("end-screen").style.display = "flex"
-    document.getElementById("percent-text").innerHTML = Math.round((correctCount/unpunctuatedLyrics.length)*100).toString()+"%"
+    document.getElementById("percent-text").innerHTML = Math.round((correctCount/getTotalLyrics())*100).toString()+"%"
     document.getElementById("correct-end").innerHTML = correctCount.toString()
     document.getElementById("total-end").innerHTML = getTotalLyrics()
     document.getElementById("stop").style.display = "none"
