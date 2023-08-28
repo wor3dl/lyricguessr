@@ -72,6 +72,11 @@ settings {
     aspect-ratio: 1/1;
     width: 8dvh;
     margin: auto;
+    transition: linear 0.1s color;
+}
+
+.bi:hover {
+    color: #555;
 }
 
 #header-container {
