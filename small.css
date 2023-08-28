@@ -1,4 +1,7 @@
 @media only screen and (max-width: 600px) {
+    #lyric-container {
+        padding-top: 60dvh;
+    }
     #song-name {
         font-size: 0.8em;
     }
