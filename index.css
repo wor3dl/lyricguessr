@@ -287,6 +287,7 @@ settings {
 
 
 #lyric-container {
+    padding-top: 63dvh;
     display: flex;
     align-content: flex-start;
     justify-content: flex-start;
