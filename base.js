@@ -51,6 +51,10 @@ function loadCurrentGame() {
 
   if (!window.localStorage.getItem("cookies")) {
     firstTime()
+  } else {
+    gtag('consent', 'update', {
+      'ad_storage': 'granted'
+    });
   }
 
   let current = JSON.parse(window.localStorage.getItem("current"))
@@ -117,6 +121,11 @@ function firstTime() {
 }
 
 function acceptCookies() {
+
+    gtag('consent', 'update', {
+      'ad_storage': 'granted'
+    });
+
   document.getElementById("cookie-alert").style = "display: none;"
   let current = {date:getTodaysDate()}
   window.localStorage.setItem("current", JSON.stringify(current))
