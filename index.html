@@ -47,22 +47,10 @@
     </buttons>
   </div>
 
-  <div id="lyric-container"></div>
   
-  <div id="input-container">
-    <input id="lyric-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-    <div id="progress-container">
-      <div id="progress">
-        <h1 id="correct">0</h1>
-        <h1 id="slash">/</h1>
-        <h1 id="total">???</h1>
-      </div>
-      <div id="time">00:00</div>
-    </div>
-  </div>
-
   <div id="end-screen">
     <div class="tab-buttons">
+      <div class="tab-button" id="lyrics-button" onclick="lyricsClicked()">Lyrics</div>
       <div class="tab-button selected" id="today-button" onclick="todayClicked()">Today</div>
       <div class="tab-button" id="all-time-button" onclick="allTimeClicked()">All Time</div>
     </div>
@@ -94,6 +82,21 @@
         </div>
       </div>
 
+    </div>
+  </div>
+
+
+  <div id="lyric-container"></div>
+  
+  <div id="input-container">
+    <input id="lyric-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+    <div id="progress-container">
+      <div id="progress">
+        <h1 id="correct">0</h1>
+        <h1 id="slash">/</h1>
+        <h1 id="total">???</h1>
+      </div>
+      <div id="time">00:00</div>
     </div>
   </div>
 

@@ -40,7 +40,7 @@ retrieveSong(fullSongName).then(data => {
 
     UnhideLyric("")
     lastGuess.forEach((element) => {
-        element.style = "color: white"
+        element.classList.add("correct")
     })
 
     //Retrieving Current Game
@@ -105,12 +105,14 @@ function createLyric(lyric) {
 
 function UnhideLyric(lyric) {
     lastGuess.forEach((element) => {
-        element.style = "color: white"
+        element.classList.remove("just-correct")
+        
     })
     while (unpunctuatedLyrics.indexOf(lyric) != -1) {
         let index = unpunctuatedLyrics.indexOf(lyric)
         unpunctuatedLyrics[index] = null
-        lyricContainer.children[index].style = "color: white; background-color: green"
+        lyricContainer.children[index].classList.add("correct")
+        lyricContainer.children[index].classList.add("just-correct")
         lastGuess.push(lyricContainer.children[index])
         if (!(lyric === "")) {
             correctCount += 1
@@ -205,6 +207,16 @@ function getTotalLyrics() {
 }
 
 function endGame() {
+
+    for (let lyric of lyricContainer.children) {
+        if (lyric.classList.contains("correct")) {
+            lyric.classList.add("just-correct")
+        } else {
+            lyric.classList.add("missed")
+        }
+    }
+
+
     if (!endTime) endTime = (new Date()).getTime()
     saveCurrentGame(startTime, correctWords, endTime)
     document.getElementById("lyric-container").style.display = "none"
@@ -232,11 +244,22 @@ function endGame() {
 
 }
 
+function lyricsClicked() {
+    document.getElementById("lyric-container").style.display = "flex"
+    document.getElementById("lyrics-button").classList.add("selected")
+    document.getElementById("today").style.display = "none"
+    document.getElementById("today-button").classList.remove("selected")
+    document.getElementById("all-time").style.display = "none"
+    document.getElementById("all-time-button").classList.remove("selected")
+}
+
 function todayClicked() {
     document.getElementById("today").style.display = "flex"
     document.getElementById("today-button").classList.add("selected")
     document.getElementById("all-time").style.display = "none"
     document.getElementById("all-time-button").classList.remove("selected")
+    document.getElementById("lyric-container").style.display = "none"
+    document.getElementById("lyrics-button").classList.remove("selected")
 
 
 }
@@ -246,6 +269,8 @@ function allTimeClicked() {
     document.getElementById("today-button").classList.remove("selected")
     document.getElementById("all-time").style.display = "flex"
     document.getElementById("all-time-button").classList.add("selected")
+    document.getElementById("lyric-container").style.display = "none"
+    document.getElementById("lyrics-button").classList.remove("selected")
 
 }
 
