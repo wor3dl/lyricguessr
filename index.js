@@ -112,9 +112,9 @@ function UnhideLyric(lyric) {
         let index = unpunctuatedLyrics.indexOf(lyric)
         unpunctuatedLyrics[index] = null
         lyricContainer.children[index].classList.add("correct")
-        lyricContainer.children[index].classList.add("just-correct")
         lastGuess.push(lyricContainer.children[index])
         if (!(lyric === "")) {
+            lyricContainer.children[index].classList.add("just-correct")
             correctCount += 1
             if (correctCount >= unpunctuatedLyrics.length) {
                 endGame()
