@@ -377,6 +377,7 @@ buttons {
     display: none;
     position: absolute;
     font-size: 1.5em;
+    text-align: center;
     bottom: 0;
     left: 50%;
     transform: translate(-50%, -50%);
