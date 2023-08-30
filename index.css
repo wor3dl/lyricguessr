@@ -72,13 +72,6 @@ buttons {
     margin-right: 1dvh;
 }
 
-settings {
-    display: block;
-    position: fixed;
-    background-color: black;
-    width: 100dvw;
-    height: 100dvh;
-}
 
 .bi {
     color: white;
@@ -338,7 +331,7 @@ settings {
     transition: .075s linear;
 }
 
-#settings {
+.fade-background {
     display: none;
     align-items: center;
     justify-content: center;
@@ -349,7 +342,7 @@ settings {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-#settings-box {
+#cookie-box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -358,8 +351,71 @@ settings {
     background-color: rgb(17, 17, 17);
     padding: 2dvh;
     width: 60%;
-    min-height: 30%;
+    gap: 1em;
     position: relative;
+}
+
+.cookie-button {
+    font-size: 2em;
+    color: white;
+    padding: 0.3em;
+    text-align: center;
+    border: 0.1em solid white;
+    margin-top: 0.2em;
+    width: 30%;
+}
+
+.cookie-button:hover {
+    filter: brightness(80%);
+}
+
+#accept-cookies {
+    background-color: green;
+}
+
+#privacy {
+    display: none;
+    position: absolute;
+    font-size: 1.5em;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#stop-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    border: 0.5dvh solid white;
+    background-color: rgb(17, 17, 17);
+    padding: 2dvh;
+    width: 60%;
+    gap: 1em;
+    position: relative;
+}
+
+.confirmation-button {
+    font-size: 2em;
+    color: white;
+    padding: 0.3em;
+    text-align: center;
+    border: 0.1em solid white;
+    margin-top: 0.2em;
+    width: 30%;
+}
+
+.confirmation-button:hover {
+    filter: brightness(80%);
+}
+
+#continue-game {
+    background-color: green;
+}
+
+#end-game {
+    background-color: red;
 }
 
 #exit-settings {

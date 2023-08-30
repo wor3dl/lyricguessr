@@ -49,6 +49,10 @@ function getStringFromDate(date) {
 
 function loadCurrentGame() {
 
+  if (!window.localStorage.getItem("cookies")) {
+    firstTime()
+  }
+
   let current = JSON.parse(window.localStorage.getItem("current"))
   if (current) {
     if (current.date == getStringFromDate(getTodaysDate())) {
@@ -57,9 +61,10 @@ function loadCurrentGame() {
       return null
     }
   } else {
-    firstTime()
+    firstTimeToday()
     return null
   }
+
 }
 
 function retrieveStats() {
@@ -103,8 +108,18 @@ function saveCurrentGame(startTime, words, endTime=undefined) {
 
 }
 
+function firstTimeToday() {
+  //???
+}
+
 function firstTime() {
+  document.getElementById("cookie-alert").style = "display: flex;"
+}
+
+function acceptCookies() {
+  document.getElementById("cookie-alert").style = "display: none;"
   let current = {date:getTodaysDate()}
   window.localStorage.setItem("current", JSON.stringify(current))
   window.localStorage.setItem("stats", JSON.stringify({}))
+  window.localStorage.setItem("cookies", "yum")
 }

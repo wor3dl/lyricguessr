@@ -73,6 +73,18 @@
         width: 15dvh;
     }
 
+    #cookie-box {
+        width: 80%;
+    }
+
+    #cookie-message {
+        font-size: 1em;
+    }
+
+    .cookie-button {
+        width: 60%;
+    }
+
 
 
   }

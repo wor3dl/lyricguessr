@@ -219,8 +219,10 @@ function endGame() {
 
     if (!endTime) endTime = (new Date()).getTime()
     saveCurrentGame(startTime, correctWords, endTime)
+    document.getElementById("stop-confirmation").style.display = "none"
     document.getElementById("lyric-container").style.display = "none"
     document.getElementById("input-container").style.display = "none"
+    document.getElementById("privacy").style.display = "flex"
     document.getElementById("end-screen").style.display = "flex"
     document.getElementById("percent-text").innerHTML = Math.round((correctCount/getTotalLyrics())*100).toString()+"%"
     document.getElementById("correct-end").innerHTML = correctCount.toString()
@@ -272,6 +274,14 @@ function allTimeClicked() {
     document.getElementById("lyric-container").style.display = "none"
     document.getElementById("lyrics-button").classList.remove("selected")
 
+}
+
+function continueGame() {
+    document.getElementById("stop-confirmation").style.display = "none"
+}
+
+function stopClicked() {
+    document.getElementById("stop-confirmation").style.display = "flex"
 }
 
 function openSettings() {
