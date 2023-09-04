@@ -84,6 +84,19 @@
     .cookie-button {
         width: 60%;
     }
+    
+    #stop-box {
+        width: 80%;
+    }
+
+    #confirmation-container {
+        gap: 1em;
+    }
+
+    .confirmation-button {
+        width: 60%;
+        font-size: 1.5em;
+    }
 
     #privacy {
         font-size: 1em;

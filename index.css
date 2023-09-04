@@ -397,6 +397,14 @@ buttons {
     position: relative;
 }
 
+#confirmation-container {
+    display: flex; 
+    flex-direction: row; 
+    gap: 3em; 
+    width: 100%; 
+    justify-content: center;
+}
+
 .confirmation-button {
     font-size: 2em;
     color: white;
@@ -405,6 +413,9 @@ buttons {
     border: 0.1em solid white;
     margin-top: 0.2em;
     width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .confirmation-button:hover {
