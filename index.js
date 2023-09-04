@@ -221,6 +221,7 @@ function endGame() {
     saveCurrentGame(startTime, correctWords, endTime)
     document.getElementById("stop-confirmation").style.display = "none"
     document.getElementById("lyric-container").style.display = "none"
+    document.getElementById("lyric-container").style.paddingTop = "0px"
     document.getElementById("input-container").style.display = "none"
     document.getElementById("privacy").style.display = "flex"
     document.getElementById("end-screen").style.display = "flex"

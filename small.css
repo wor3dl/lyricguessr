@@ -1,5 +1,9 @@
 @media only screen and (max-width: 800px) {
 
+    #lyric-container {
+        padding-top: 60dvh;
+    }
+
     #song-name {
         font-size: 0.8em;
     }
@@ -50,7 +54,7 @@
     }
 
     #end-screen {
-        width: 70%;
+        width: 90%;
     }
 
     .tab-button {
