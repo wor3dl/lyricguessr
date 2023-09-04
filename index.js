@@ -141,6 +141,10 @@ SubmitGuess = function() {
             startTime = (new Date()).getTime()
         }
 
+        if (correctCount == getTotalLyrics()) { // why is this a function? can I be bothered to change it? hahaha no
+            endGame()
+        }
+
     } else {
         if (unpunctuatedLyricsOriginal.includes(inputString)) {
             GuessFlash("orange")
