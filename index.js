@@ -38,6 +38,9 @@ retrieveSong(fullSongName).then(data => {
     // lyricDOM.innerHTML = ""
     // lyricContainer.appendChild(lyricDOM)
 
+    for (let i = 0; i < 5; i++) {
+        UnhideLyric(unpunctuatedLyrics[i])
+    }
     UnhideLyric("")
     lastGuess.forEach((element) => {
         element.classList.add("correct")
@@ -231,7 +234,7 @@ function endGame() {
     document.getElementById("stop").style.display = "none"
     document.getElementById("time-end").innerHTML = getTimeString(getEndTime()-startTime)
     //This doesn't really make sense as you don't type all of these words but i needed to pad out the stats
-    document.getElementById("wpm-end").innerHTML = startTime != undefined ? (Math.round(correctCount/((getEndTime()-startTime)/100/60))/10).toString()+" wpm" : 0 + " wpm"
+    document.getElementById("wpm-end").innerHTML = startTime != undefined ? correctCount/(Math.round(((getEndTime()-startTime)/1000)/6)/10).toString()+" wpm" : 0 + " wpm"
 
     clearInterval(timeUpdateInterval)
 
