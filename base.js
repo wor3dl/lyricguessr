@@ -31,17 +31,26 @@ var repeatChorus = false
 
 function getTodaysDate() {
   if (debug) {
-    return new Date("6 September 2023")
+    return new Date("23 September 2023")
   } else {
     return new Date()
   }
 }
 
 async function retrieveSong(name) {
-    var song = await fetch(`songs/${name}.song`)
-    var data = await song.json()
-    return data
+    return fetch(`songs/${name}.song`).then(song => {
+      return song.json().then(data => {
+        return data
+      }).catch(reason => {
+        console.log(`Failed to convert song to json, reason: ${reason}`)
+      })
+    }).catch(reason => {
+      console.log(`Failed to fetch song, reason: ${reason}`)
+    })
+
 }
+
+
 
 function getStringFromDate(date) {
   return`${date.getUTCDate()}/${date.getUTCMonth()}/${date.getUTCFullYear()}`

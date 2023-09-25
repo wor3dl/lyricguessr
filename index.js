@@ -16,8 +16,9 @@ var correctCount = 0
 var timeUpdateInterval
 var fullSongName = songList[dayOffset]
 
-//Everything inside here is executed after the target song has been loaded
-retrieveSong(fullSongName).then(data => {
+var everythingLoaded = false
+
+function setupSong(data) {
 
     targetSong = data
 
@@ -38,9 +39,20 @@ retrieveSong(fullSongName).then(data => {
     // lyricDOM.innerHTML = ""
     // lyricContainer.appendChild(lyricDOM)
 
+    // Old broken shit
+    // for (let i = 0; i < 5; i++) {
+    //     UnhideLyric(unpunctuatedLyrics[i])
+    // }
+
     for (let i = 0; i < 5; i++) {
-        UnhideLyric(unpunctuatedLyrics[i])
+        if (unpunctuatedLyrics[i]) {
+            UnhideLyric(unpunctuatedLyrics[i])
+        }
     }
+
+    // I hink this fixes it ^^^
+
+
     UnhideLyric("")
     lastGuess.forEach((element) => {
         element.classList.add("correct")
@@ -71,7 +83,20 @@ retrieveSong(fullSongName).then(data => {
     }
 
     document.getElementById("total").innerText = getTotalLyrics()
+    everythingLoaded = true
+}
+
+//Everything inside here is executed after the target song has been loaded
+retrieveSong(fullSongName).then(data => {
+
+    console.log(fullSongName)
+
+    setupSong(data)
+
     
+}).catch(reason => {
+    console.log("oh no")
+    setupSong(errorSong)
 })
 
 function getEndTime() {
@@ -111,7 +136,14 @@ function UnhideLyric(lyric) {
         element.classList.remove("just-correct")
         
     })
+
+    let limit = 0
+
     while (unpunctuatedLyrics.indexOf(lyric) != -1) {
+        limit += 1
+        if (limit > 700) {
+            break
+        }
         let index = unpunctuatedLyrics.indexOf(lyric)
         unpunctuatedLyrics[index] = null
         lyricContainer.children[index].classList.add("correct")
@@ -119,9 +151,9 @@ function UnhideLyric(lyric) {
         if (!(lyric === "")) {
             lyricContainer.children[index].classList.add("just-correct")
             correctCount += 1
-            if (correctCount >= unpunctuatedLyrics.length) {
-                endGame()
-            }
+            // if (everythingLoaded && correctCount >= unpunctuatedLyrics.length) {
+            //     endGame()
+            // }
         }
     }
     document.getElementById("correct").innerHTML = correctCount.toString()
