@@ -276,7 +276,7 @@ function endGame() {
 
     let stats = {
         correct:correctCount,
-        total:unpunctuatedLyrics.length,
+        total:getTotalLyrics(),
         time:(new Date()).getTime()-startTime,
         song:fullSongName,
     }
