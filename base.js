@@ -21,7 +21,7 @@ const hash = function(str, seed = 0) {
 
 var debug = false
 
-const offsetFromDate = new Date("13 March 2024")
+const offsetFromDate = new Date("31 August 2024")
 const msOffset = getTodaysDate() - offsetFromDate
 const dayOffset = Math.floor(msOffset / 1000 / 60 / 60 / 24)
 
